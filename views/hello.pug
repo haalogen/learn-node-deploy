@@ -1,0 +1,12 @@
+extends layout
+
+//- Overrides the block from extended template
+block content
+  .wrapper
+    - const upDog = dog.toUpperCase();
+    p.hello Hello my dog is #{dog.toUpperCase()}
+    img.dog(src="dog.jpg" alt=`Dog ${upDog}`)
+
+  h2
+    | Hello
+    | Sale ends #{h.moment().endOf('day').fromNow()}

@@ -1,0 +1,16 @@
+mixin pagination(page, pages, count)
+  .pagination
+    .pagination__prev
+      if page > 1
+        //- We are not at the first page
+        - const prevPage = parseFloat(page) - 1
+        a(href=`/stores/page/${prevPage}`) Prev: #{prevPage}
+
+    .pagination__text
+      p Page #{page} of #{pages} — #{count} total results
+
+    .pagination__next
+      if page < pages
+        //- We are not at the last page
+        - const nextPage = parseFloat(page) + 1
+        a(href=`/stores/page/${nextPage}`) Next: #{nextPage}
