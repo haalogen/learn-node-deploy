@@ -1,16 +1,19 @@
 {
-  "name": "dang-thats-delicious",
-  "version": "0.0.0",
+  "name": "stan-dang-thats-delicious",
+  "version": "0.0.1",
   "private": true,
   "engines": {
     "node": ">= 7.6.0"
   },
+  "now": {
+      "dotenv": "variables.env.now"
+    },
   "scripts": {
-    "prod": "node ./start.js",
+    "start": "node ./start.js",
 
     "commentWatch": "// kick off node process, JS changes => restart process(server)",
     "watch": "nodemon ./start.js --ignore public/",
-    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"ND,WP\" --prefix name",
+    "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"ND,WP\" --prefix name",
 
     "commentAssets": "// For CSS, client-side JS",
     "assets": "webpack -w --display-max-modules 0",
